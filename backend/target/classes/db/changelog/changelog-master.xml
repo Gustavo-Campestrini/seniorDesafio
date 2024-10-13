@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="gustavo.campestrini">
+        <createTable tableName="hospede">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nome" type="varchar(255)"/>
+            <column name="telefone" type="varchar(50)"/>
+            <column name="documento" type="varchar(100)"/>
+        </createTable>
+
+        <createTable tableName="check_in">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="hospede_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="check_in_hospede_fk" references="hospede(id)"/>
+            </column>
+            <column name="data_entrada" type="timestamp"/>
+            <column name="data_saida" type="timestamp"/>
+            <column name="adicional_veiculo" type="boolean"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

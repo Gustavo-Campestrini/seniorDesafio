@@ -1,0 +1,5 @@
+com\example\desafio_hotel_senior\BaseRepositoryTest.class
+com\example\desafio_hotel_senior\api\hospede\HospedeControllerTest.class
+com\example\desafio_hotel_senior\api\checkIn\CheckInRepositoryTest.class
+com\example\desafio_hotel_senior\api\checkIn\CheckInControllerTest.class
+com\example\desafio_hotel_senior\DesafioHotelSeniorApplicationTests.class

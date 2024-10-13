@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.desafio_hotel_senior.api.checkIn.CheckInControllerTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.190 s -- in com.example.desafio_hotel_senior.api.checkIn.CheckInControllerTest

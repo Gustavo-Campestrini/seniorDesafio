@@ -1,0 +1,7 @@
+com\example\desafio_hotel_senior\checkIn\CheckInEntity.class
+com\example\desafio_hotel_senior\hospede\HospedeControler.class
+com\example\desafio_hotel_senior\hospede\HospedeRepository.class
+com\example\desafio_hotel_senior\hospede\HospedeEntity.class
+com\example\desafio_hotel_senior\checkIn\CheckInRepository.class
+com\example\desafio_hotel_senior\Application.class
+com\example\desafio_hotel_senior\checkIn\CheckInController.class
