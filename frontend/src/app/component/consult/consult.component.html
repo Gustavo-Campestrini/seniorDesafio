@@ -1,0 +1,83 @@
+<div class="card mt-4">
+  <div class="card-header bg-primary">
+    <h5 class="mb-0 text-white">Consultas</h5>
+  </div>
+
+  <div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <div class="form-check form-check-inline mt-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="filterOptions"
+                  id="presentRadio"
+                  (click)="setFilter('present')"
+                />
+                <label class="form-check-label" for="presentRadio">
+                  Pessoas ainda presentes
+                </label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="filterOptions"
+                  id="leftRadio"
+                  (click)="setFilter('left')"
+                />
+                <label class="form-check-label" for="leftRadio">
+                  Pessoas que já deixaram o hotel
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table class="table table-sm mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Documento</th>
+              <th scope="col">Valor gasto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let checkIn of paginatedData">
+              <td>{{ checkIn.pessoa.nome }}</td>
+              <td>{{ checkIn.pessoa.documento }}</td>
+              <td>{{ checkIn.valor | currency : "BRL" }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+
+      <nav aria-label="Page navigation">
+        <div class="pagination mt-3">
+          <div class="page-item" [class.disabled]="currentPage === 1">
+            <button
+              class="page-link rounded-pill me-2"
+              (click)="goToPage(currentPage - 1)"
+              aria-disabled="true"
+            >
+              <i class="fas fa-arrow-left"></i> Anterior
+            </button>
+          </div>
+
+          <div class="page-item" [class.disabled]="currentPage === totalPages">
+            <button
+              class="page-link rounded-pill ms-2"
+              (click)="goToPage(currentPage + 1)"
+            >
+              Próximo <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

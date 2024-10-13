@@ -1,0 +1,75 @@
+<div>
+  <div class="card">
+    <div class="card-header bg-primary">
+      <h5 class="mb-0 text-white">Novo check in</h5>
+    </div>
+
+    <div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="row align-items-center">
+              <div class="col">
+                <label for="dataHoraEntrada">Data/Hora de Entrada</label>
+                <input
+                  id="dataHoraEntrada"
+                  type="datetime-local"
+                  class="form-control"
+                  formControlName="dataEntrada"
+                />
+              </div>
+              <div class="col">
+                <label for="dataSaida">Data/Hora de saída</label>
+                <input
+                  id="dataSaida"
+                  type="datetime-local"
+                  class="form-control"
+                  formControlName="dataSaida"
+                />
+              </div>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col">
+                <label for="pessoa">Pessoa</label>
+                <select
+                  id="pessoa"
+                  class="form-control"
+                  formControlName="pessoa"
+                >
+                  <option value="" disabled selected>
+                    Selecione uma pessoa
+                  </option>
+                  <option *ngFor="let hospede of hospedes" [ngValue]="hospede">
+                    {{ hospede.nome }}
+                  </option>
+                </select>
+              </div>
+              <div class="col mt-4">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="veiculo"
+                  formControlName="veiculo"
+                />
+                <label class="form-check-label" for="veiculo">
+                  Possuí veículo
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col">
+              <button type="submit" class="btn btn-primary btn-sm">
+                Salvar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="notification" class="notification">Salvo com sucesso!</div>

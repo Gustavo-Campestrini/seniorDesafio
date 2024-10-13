@@ -1,0 +1,20 @@
+.modal-dialog {
+  margin: auto; 
+}
+
+.notification {
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  position: fixed;
+  padding: 10px 20px;
+  z-index: 9999;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.notification.show {
+  display: block;
+  opacity: 1;
+}
