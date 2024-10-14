@@ -1,9 +1,9 @@
 package com.example.desafio_hotel_senior.checkIn;
 
 import com.example.desafio_hotel_senior.hospede.HospedeEntity;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,12 +31,15 @@ public class CheckInEntity {
 
     @ManyToOne
     @JoinColumn(name = "hospede_id")
+    @NotNull(message = "Hospede é um campo obrigatório!")
     private HospedeEntity hospede;
 
     @Column(name = ("data_entrada"))
+    @NotNull(message = "Date de entrada é um campo obrigatório!")
     private LocalDateTime dataEntrada;
 
     @Column(name = ("data_saida"))
+    @NotNull(message = "Data de saída é um campo obrigatório!")
     private LocalDateTime dataSaida;
 
     @Column(name = ("adicional_veiculo"))

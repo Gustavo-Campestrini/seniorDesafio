@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,11 +24,14 @@ public class HospedeEntity {
     private UUID id;
 
     @Column
+    @NotEmpty(message = "Nome é um campo obrigatório!")
     private String nome;
 
     @Column
+    @NotEmpty(message = "Telefone é um campo obrigatório!")
     private String telefone;
 
     @Column
+    @NotEmpty(message = "Documento é um campo obrigatório!")
     private String documento;
 }

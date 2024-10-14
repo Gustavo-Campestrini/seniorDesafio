@@ -1,5 +1,6 @@
 package com.example.desafio_hotel_senior.hospede;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -32,12 +33,12 @@ public class HospedeControler {
     }
 
     @PostMapping
-    public HospedeEntity create(@RequestBody HospedeEntity hospede) {
+    public HospedeEntity create(@RequestBody @Valid HospedeEntity hospede) {
         return hospedeRepository.save(hospede);
     }
 
     @PutMapping("/{id}")
-    public HospedeEntity update(@PathVariable UUID id, @RequestBody HospedeEntity entity) {
+    public HospedeEntity update(@PathVariable UUID id, @RequestBody @Valid HospedeEntity entity) {
         Optional<HospedeEntity> hospedeOptional = hospedeRepository.findById(id);
         if (hospedeOptional.isPresent()) {
             HospedeEntity hospede = hospedeOptional.get();

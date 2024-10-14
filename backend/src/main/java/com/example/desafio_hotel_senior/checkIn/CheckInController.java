@@ -1,5 +1,6 @@
 package com.example.desafio_hotel_senior.checkIn;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,7 @@ public class CheckInController {
     }
 
     @PostMapping
-    public CheckInEntity create(@RequestBody CheckInEntity entity) {
+    public CheckInEntity create(@RequestBody @Valid CheckInEntity entity) {
         return repository.save(entity);
     }
 
